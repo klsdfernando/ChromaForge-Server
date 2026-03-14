@@ -1,0 +1,133 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: var(--space-md) 0;
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.headerInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    transition: transform var(--transition-fast);
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+.logoIcon {
+    display: flex;
+    filter: drop-shadow(0 2px 8px rgba(139, 92, 246, 0.3));
+}
+
+.logoText {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Desktop Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.navLink {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+}
+
+.navLink:hover {
+    color: var(--text-primary);
+}
+
+/* Mobile Menu Button */
+.menuBtn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: var(--space-sm);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 110;
+}
+
+.menuLine {
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all var(--transition-fast);
+}
+
+.menuLine.open:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menuLine.open:nth-child(2) {
+    opacity: 0;
+}
+
+.menuLine.open:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Navigation */
+.mobileNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xl);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 105;
+}
+
+.mobileNav.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobileNavLink {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: color var(--transition-fast);
+}
+
+.mobileNavLink:hover {
+    color: var(--accent-primary);
+}
