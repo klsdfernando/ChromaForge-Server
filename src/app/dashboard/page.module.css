@@ -1,0 +1,319 @@
+.dashboard {
+    min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: var(--space-3xl);
+    position: relative;
+}
+
+.bgGradient {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 60% 40% at 20% 0%, rgba(139, 92, 246, 0.1), transparent),
+        radial-gradient(ellipse 40% 30% at 80% 100%, rgba(6, 182, 212, 0.08), transparent);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+}
+
+/* Header */
+.dashHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-2xl);
+    position: relative;
+    z-index: 1;
+}
+
+.dashHeader h1 {
+    font-size: 2rem;
+    margin-bottom: var(--space-xs);
+}
+
+.dashHeader>div:first-child p {
+    color: var(--text-tertiary);
+}
+
+.headerActions {
+    display: flex;
+    gap: var(--space-md);
+}
+
+/* Stats Grid */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-3xl);
+    position: relative;
+    z-index: 1;
+}
+
+.statCard {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+}
+
+.statCard:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+}
+
+.statIcon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-secondary);
+    border-radius: var(--radius-md);
+    color: white;
+}
+
+.statInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.statValue {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.statLabel {
+    font-size: 0.875rem;
+    color: var(--text-tertiary);
+}
+
+/* Section */
+.section {
+    margin-bottom: var(--space-3xl);
+    position: relative;
+    z-index: 1;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-xl);
+}
+
+.sectionHeader h2 {
+    font-size: 1.5rem;
+}
+
+/* Filters Grid */
+.filtersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
+}
+
+.filterCard {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    padding: var(--space-lg);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+}
+
+.filterCard:hover {
+    border-color: var(--border-hover);
+}
+
+.filterPreview {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+}
+
+.filterInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.filterInfo h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-xs);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filterMeta {
+    display: flex;
+    gap: var(--space-sm);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.filterActions {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.actionBtn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-tertiary);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--text-tertiary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.actionBtn:hover {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+}
+
+.actionBtn.deleteBtn:hover {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+/* Rename Form */
+.renameForm {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.renameInput {
+    flex: 1;
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--accent-primary);
+    border-radius: var(--radius-sm);
+    outline: none;
+}
+
+.saveBtn {
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Empty State */
+.emptyState {
+    text-align: center;
+    padding: var(--space-3xl);
+    background: var(--bg-secondary);
+    border: 1px dashed var(--border-color);
+    border-radius: var(--radius-xl);
+}
+
+.emptyState svg {
+    color: var(--text-muted);
+    margin-bottom: var(--space-lg);
+    opacity: 0.5;
+}
+
+.emptyState h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
+}
+
+.emptyState p {
+    color: var(--text-tertiary);
+    margin: 0 auto var(--space-xl);
+    max-width: 300px;
+}
+
+/* Account Card */
+.accountCard {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.accountRow {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.accountRow:last-child {
+    border-bottom: none;
+}
+
+.accountLabel {
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+}
+
+.accountValue {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashHeader {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+
+    .headerActions {
+        width: 100%;
+    }
+
+    .headerActions .btn {
+        flex: 1;
+    }
+
+    .filtersGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .filterCard {
+        flex-wrap: wrap;
+    }
+
+    .filterInfo {
+        flex: 1 1 calc(100% - 76px);
+    }
+
+    .filterActions {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: var(--space-sm);
+    }
+}
